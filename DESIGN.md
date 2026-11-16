@@ -159,10 +159,14 @@ Reuse the existing business components and Base UI primitives. [notion.css](web/
 - Do use the shared tokens, a clear heading hierarchy, readable gray text and visible focus states.
 - Do preserve translations, navigation destinations, loading/error states and legal attribution.
 - Do label homepage example data as Preview.
-- Do use the configured deployment name (`pinoai`) for site branding, preserve New API / QuantumNous upstream attribution, and keep existing user theme preferences.
+- Do use the configured deployment name (`pinoai`) for site branding, use the original Pinocchio-inspired mark, and keep existing user theme preferences.
 
 ### Don't:
 
 - Don't present this product as Notion.
 - Don't add arbitrary saturated backgrounds, oversized pills or decorative gradients to the default document language.
 - Don't invent customer or performance metrics.
+
+## Brand mark
+
+[pinoai-mark.svg](web/public/pinoai-mark.svg) is the deployment logo: a simple long-nosed wooden puppet profile with a pointed black cap, warm wood face and paper tile. It stays legible at navigation and favicon sizes. SVG is the canonical asset; PNG and ICO fallbacks are rendered from it. The public footer shows the site copyright and configured legal links; the contributor attribution line was removed at the user's request. Source license headers and bundled license files remain intact.

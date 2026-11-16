@@ -22,7 +22,7 @@ For commercial licensing, please contact support@quantumnous.com
 
 // System Configuration Defaults
 export const DEFAULT_SYSTEM_NAME = 'pinoai'
-export const DEFAULT_LOGO = '/logo.png'
+export const DEFAULT_LOGO = '/pinoai-mark.svg'
 
 // LocalStorage Keys
 export const STORAGE_KEYS = {

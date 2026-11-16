@@ -14,7 +14,8 @@ pinoai is a self-hosted deployment of the New API gateway for developers and tea
 
 - The user requested the visual language of https://www.notion.com across all frontend surfaces.
 - Keep existing API contracts, routing, permissions, authentication, data handling and translations.
-- The deployment display name is `pinoai`, as requested by the user. Keep New API / QuantumNous license notices and upstream attribution.
+- The deployment display name is `pinoai`, as requested by the user. The user requested removal of the New API contributor line from the public footer. Keep source license headers and bundled license files intact.
+- Brand mark: an original geometric wooden puppet profile with a long nose and pointed cap, on a warm paper tile. Use it for the header, login, footer and favicon.
 - Public marketing pages, authenticated tools, authentication forms and supporting pages share one visual foundation. Existing theme preferences and dark mode remain supported.
 - Administrative custom homepage content and external iframe content retain their configured behavior.
 
