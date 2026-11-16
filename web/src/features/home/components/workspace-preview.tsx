@@ -39,6 +39,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useSystemConfigStore } from '@/stores/system-config-store'
 
 const providers = [
   { name: 'OpenAI', protocol: 'OpenAI', path: '/v1/chat/completions' },
@@ -49,20 +50,22 @@ const providers = [
 
 export function WorkspacePreview() {
   const { t } = useTranslation()
+  const systemName = useSystemConfigStore((state) => state.config.systemName)
 
   return (
     <div className='notion-workspace' aria-label={t('Preview')}>
       <div className='notion-workspace-topbar'>
         <span className='flex items-center gap-2'>
           <PanelLeft className='size-3.5' aria-hidden='true' />
-          New API <span aria-hidden='true'>/</span> {t('Channel Management')}
+          {systemName} <span aria-hidden='true'>/</span>{' '}
+          {t('Channel Management')}
         </span>
         <span>{t('Preview')}</span>
       </div>
       <div className='notion-workspace-body'>
         <aside className='notion-workspace-sidebar' aria-hidden='true'>
           <span>
-            <Layers className='size-4' /> New API
+            <Layers className='size-4' /> {systemName}
           </span>
           <span>
             <Home className='size-3.5' />

@@ -1,5 +1,5 @@
 ---
-name: New API — document-first interface
+name: pinoai — document-first interface
 description: Notion-inspired typography, calm document surfaces and precise controls across the entire frontend.
 colors:
   primary: "#0075de"
@@ -74,13 +74,13 @@ components:
     padding: "16px 0"
 ---
 
-# Design System: New API
+# Design System: pinoai
 
 ## Overview
 
 **Creative North Star: "The clarity of a document, the capability of an AI gateway."**
 
-The user pinned Notion's public website as the reference. The implemented New API interface uses white space, black typography, blue primary actions and restrained pastel surfaces. Authenticated pages use a quiet document workspace with a warm gray sidebar.
+The user pinned Notion's public website as the reference. The implemented pinoai interface uses white space, black typography, blue primary actions and restrained pastel surfaces. Authenticated pages use a quiet document workspace with a warm gray sidebar.
 
 The default theme shares this foundation across public pages and operational tools. Dark mode and explicit user theme, font, radius, density and content-layout preferences remain supported. The tokens above describe the default light theme and density; component overrides and user preferences can change their rendered values.
 
@@ -159,7 +159,7 @@ Reuse the existing business components and Base UI primitives. [notion.css](web/
 - Do use the shared tokens, a clear heading hierarchy, readable gray text and visible focus states.
 - Do preserve translations, navigation destinations, loading/error states and legal attribution.
 - Do label homepage example data as Preview.
-- Do keep New API / QuantumNous branding and existing user theme preferences.
+- Do use the configured deployment name (`pinoai`) for site branding, preserve New API / QuantumNous upstream attribution, and keep existing user theme preferences.
 
 ### Don't:
 
