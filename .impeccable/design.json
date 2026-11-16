@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-16T06:12:14.653302+00:00",
+  "title": "Design System: New API",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Action blue"
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "White document"
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Warm gray workspace"
+      },
+      "sidebar-active-text": {
+        "role": "neutral",
+        "displayName": "Active navigation ink"
+      },
+      "secondary-action-text": {
+        "role": "primary",
+        "displayName": "Secondary action blue"
+      },
+      "input-border": {
+        "role": "neutral",
+        "displayName": "Field boundary"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Inter display",
+        "purpose": "Centered homepage headlines."
+      },
+      "body": {
+        "displayName": "Inter text",
+        "purpose": "All default interface text, with CJK fallbacks."
+      }
+    },
+    "motion": [
+      {
+        "name": "button-color-transition",
+        "value": "150ms",
+        "purpose": "Shared button color transitions; overlay and navigation timings remain component-specific."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared default size is 32px at default density; homepage hero actions override the height to 40px.",
+      "html": "<button class=\"ds-btn-primary\">Get started</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:calc(var(--spacing,.25rem)*1.5);height:calc(var(--spacing,.25rem)*8);padding:0 calc(var(--spacing,.25rem)*2.5);border:1px solid transparent;border-radius:var(--radius);font-family:var(--font-body);font-size:var(--text-sm,.875rem);font-weight:500;line-height:1.25rem;white-space:nowrap;cursor:pointer;transition:color 150ms,background-color 150ms,border-color 150ms;outline:none;background:var(--primary);color:var(--primary-foreground)}.ds-btn-primary:hover{background:color-mix(in oklab,var(--primary) 90%,transparent)}.ds-btn-primary:focus-visible{border-color:var(--ring);box-shadow:0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}.ds-btn-primary:active{transform:translateY(1px)}.ds-btn-primary:disabled{pointer-events:none;opacity:.5}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Shared default size is 32px at default density; homepage hero actions override the height to 40px.",
+      "html": "<button class=\"ds-btn-secondary\">View pricing</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:calc(var(--spacing,.25rem)*1.5);height:calc(var(--spacing,.25rem)*8);padding:0 calc(var(--spacing,.25rem)*2.5);border:1px solid transparent;border-radius:var(--radius);font-family:var(--font-body);font-size:var(--text-sm,.875rem);font-weight:500;line-height:1.25rem;white-space:nowrap;cursor:pointer;transition:color 150ms,background-color 150ms,border-color 150ms;outline:none;background:var(--secondary);color:var(--secondary-foreground)}.ds-btn-secondary:hover{background:color-mix(in oklab,var(--secondary) 80%,transparent)}.ds-btn-secondary:focus-visible{border-color:var(--ring);box-shadow:0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}.ds-btn-secondary:active{transform:translateY(1px)}.ds-btn-secondary:disabled{pointer-events:none;opacity:.5}"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Shared default field: 32px high, 16px text on mobile and 14px text from 768px at default density.",
+      "html": "<input class=\"ds-input\" aria-label=\"Name\" placeholder=\"Name\"/>",
+      "css": ".ds-input{height:calc(var(--spacing,.25rem)*8);min-width:0;padding:calc(var(--spacing,.25rem)*1) calc(var(--spacing,.25rem)*2.5);background:transparent;color:var(--foreground);border:1px solid var(--input);border-radius:var(--radius);font-family:var(--font-body);font-size:16px;font-weight:400;line-height:1.5rem;caret-color:var(--primary);outline:none;transition:color 150ms,background-color 150ms,border-color 150ms}.ds-input::placeholder{color:var(--muted-foreground);opacity:1}.ds-input:focus-visible{border-color:var(--ring);box-shadow:inset 0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}.ds-input:disabled{background:color-mix(in oklab,var(--input) 50%,transparent);pointer-events:none;opacity:.5}.ds-input[aria-invalid=\"true\"]{border-color:var(--destructive);box-shadow:inset 0 0 0 3px color-mix(in oklab,var(--destructive) 20%,transparent)}:host-context(.dark) .ds-input{background:color-mix(in oklab,var(--input) 30%,transparent)}@media(min-width:768px){.ds-input{font-size:var(--text-sm,.875rem);line-height:1.25rem}}"
+    },
+    {
+      "name": "Sidebar selection",
+      "kind": "nav",
+      "refersTo": "sidebar-item-active",
+      "description": "Neutral active state of the shared sidebar item, with medium text and a two-pixel keyboard focus ring.",
+      "html": "<nav><a class=\"ds-sidebar-item\" href=\"#\" aria-current=\"page\">Channels</a></nav>",
+      "css": ".ds-sidebar-item{display:flex;align-items:center;height:calc(var(--spacing,.25rem)*8);padding:calc(var(--spacing,.25rem)*2);background:var(--sidebar-accent);color:var(--sidebar-accent-foreground);border-radius:calc(var(--radius)*.8);font-family:var(--font-body);font-size:var(--text-sm,.875rem);font-weight:500;line-height:1.25rem;text-decoration:none;outline:none}.ds-sidebar-item:hover,.ds-sidebar-item:active{background:var(--sidebar-accent);color:var(--sidebar-accent-foreground)}.ds-sidebar-item:focus-visible{box-shadow:0 0 0 2px var(--sidebar-ring)}"
+    },
+    {
+      "name": "Primary badge",
+      "kind": "chip",
+      "refersTo": "badge-primary",
+      "description": "Shared badge defaults to primary blue; semantic status colors are explicit variants or call-site overrides.",
+      "html": "<a class=\"ds-badge-primary\" href=\"#\">API</a>",
+      "css": ".ds-badge-primary{display:inline-flex;align-items:center;justify-content:center;height:calc(var(--spacing,.25rem)*5);padding:calc(var(--spacing,.25rem)*.5) calc(var(--spacing,.25rem)*2);border:1px solid transparent;border-radius:calc(var(--radius)*.6);background:var(--primary);color:var(--primary-foreground);font-family:var(--font-body);font-size:var(--text-xs,.75rem);font-weight:500;line-height:1rem;white-space:nowrap;text-decoration:none;outline:none;transition:all 150ms}.ds-badge-primary:hover{background:color-mix(in oklab,var(--primary) 80%,transparent)}.ds-badge-primary:focus-visible{border-color:var(--ring);box-shadow:0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Shared default card uses a one-pixel foreground ring, a radius of 1.4 times the base and 16px spacing at default density.",
+      "html": "<section class=\"ds-card\"><div class=\"ds-card-header\"><div class=\"ds-card-title\">Channel management</div><div class=\"ds-card-description\">Connect compatible providers.</div></div><div class=\"ds-card-content\">Configure your gateway.</div></section>",
+      "css": ".ds-card{display:flex;flex-direction:column;gap:calc(var(--spacing,.25rem)*4);padding:calc(var(--spacing,.25rem)*4) 0;overflow:hidden;background:var(--card);color:var(--card-foreground);border-radius:calc(var(--radius)*1.4);box-shadow:0 0 0 1px color-mix(in oklab,var(--foreground) 10%,transparent);font-family:var(--font-body);font-size:var(--text-sm,.875rem);line-height:1.25rem}.ds-card-header{display:grid;gap:calc(var(--spacing,.25rem)*1);padding:0 calc(var(--spacing,.25rem)*4)}.ds-card-title{font-size:var(--text-base,1rem);font-weight:500;line-height:1.375}.ds-card-description{color:var(--muted-foreground)}.ds-card-content{padding:0 calc(var(--spacing,.25rem)*4)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The clarity of a document, the capability of an AI gateway.",
+    "overview": "The user pinned Notion's public website as the reference. The implemented New API interface uses white space, black typography, blue primary actions and restrained pastel surfaces. Authenticated pages use a quiet document workspace with a warm gray sidebar.\n\nThe default theme shares this foundation across public pages and operational tools. Dark mode and explicit user theme, font, radius, density and content-layout preferences remain supported. The tokens above describe the default light theme and density; component overrides and user preferences can change their rendered values.",
+    "keyCharacteristics": [
+      "White document canvas",
+      "Inter typography",
+      "Blue actions",
+      "Warm gray navigation",
+      "Small semantic radii"
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Token Rule",
+        "body": "Reuse shared semantic variables so dark mode and saved theme preferences carry through new surfaces.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do use the shared tokens, a clear heading hierarchy, readable gray text and visible focus states.",
+      "Do preserve translations, navigation destinations, loading/error states and legal attribution.",
+      "Do label homepage example data as Preview.",
+      "Do keep New API / QuantumNous branding and existing user theme preferences."
+    ],
+    "donts": [
+      "Don't present this product as Notion.",
+      "Don't add arbitrary saturated backgrounds, oversized pills or decorative gradients to the default document language.",
+      "Don't invent customer or performance metrics."
+    ]
+  }
+}

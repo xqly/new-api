@@ -83,6 +83,8 @@ export default defineConfig(({ envMode }) => {
       // extracted license files, which some distributions require for open-source compliance.
     },
     performance: {
+      // Thousands of lazy icon/language chunks make gzip-size reporting costly.
+      printFileSize: false,
       // Remove console in production
       removeConsole: isProd ? ['log'] : false,
       buildCache: false,

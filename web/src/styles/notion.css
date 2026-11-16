@@ -1,0 +1,251 @@
+/*
+Copyright (C) 2023-2026 QuantumNous
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+For commercial licensing, please contact support@quantumnous.com
+*/
+/* The shared document language applies to public pages and the workspace. */
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    letter-spacing: -0.011em;
+    text-underline-offset: 0.2em;
+    --notion-green: #e1f3e7;
+    --notion-blue: #e7f3fe;
+    --notion-sand: #f6f3ed;
+  }
+
+  .dark body {
+    --notion-green: #23392d;
+    --notion-blue: #223447;
+    --notion-sand: #353128;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 22%, transparent);
+    color: var(--foreground);
+  }
+
+  input,
+  textarea {
+    caret-color: var(--primary);
+  }
+
+  [data-design='workspace'] :is(h1, h2, h3) {
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  .notion-home {
+    --landing-width: 1120px;
+  }
+
+  .notion-hero {
+    padding: 144px 24px 0;
+    text-align: center;
+  }
+
+  .notion-hero h1 {
+    max-width: 1080px;
+    margin-inline: auto;
+    font-size: clamp(2.5rem, 5.9vw, 5.25rem);
+    font-weight: 650;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+    word-break: keep-all;
+  }
+
+  .notion-hero h1 mark {
+    padding-inline: 0.12em;
+    border-radius: 0.22em;
+    background: var(--notion-green);
+    color: inherit;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .notion-hero-description {
+    max-width: 730px;
+    margin: 24px auto 0;
+    color: var(--muted-foreground);
+    font-size: 18px;
+    line-height: 1.7;
+    text-wrap: pretty;
+  }
+
+  .notion-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-block: 28px 64px;
+  }
+
+  .notion-workspace {
+    max-width: 1040px;
+    margin-inline: auto;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 10px 10px 0 0;
+    background: var(--background);
+    text-align: start;
+  }
+
+  .notion-workspace-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 38px;
+    padding-inline: 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--muted);
+    color: var(--muted-foreground);
+    font-size: 11px;
+  }
+
+  .notion-workspace-body {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    min-height: 354px;
+  }
+
+  .notion-workspace-sidebar {
+    padding: 24px 12px;
+    border-inline-end: 1px solid var(--border);
+    background: var(--sidebar);
+    color: var(--sidebar-foreground);
+    font-size: 12px;
+  }
+
+  .notion-workspace-sidebar > span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-block: 3px;
+    padding: 7px 10px;
+    border-radius: 4px;
+  }
+
+  .notion-workspace-sidebar > span:first-child {
+    margin-bottom: 22px;
+    color: var(--foreground);
+    font-weight: 600;
+  }
+
+  .notion-workspace-sidebar > span[data-current] {
+    background: var(--sidebar-accent);
+    color: var(--sidebar-accent-foreground);
+  }
+
+  .notion-workspace-content {
+    min-width: 0;
+    padding: 30px 36px 20px;
+  }
+
+  .notion-workspace-content h2 {
+    margin-block: 8px 18px;
+    font-size: 30px;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+  }
+
+  .notion-workspace-content [data-slot='table-body'] > tr {
+    height: 46px;
+  }
+
+  .notion-workspace-content [data-slot='table-head'] {
+    color: var(--muted-foreground);
+    font-size: 12px;
+  }
+
+  .notion-workspace-content [data-slot='table-cell'] {
+    font-size: 13px;
+  }
+
+  .notion-provider-strip {
+    max-width: var(--landing-width);
+    margin: 0 auto;
+    padding: 36px 24px 48px;
+    text-align: center;
+  }
+
+  .notion-provider-strip > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 44px;
+    margin-top: 22px;
+    color: var(--foreground);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .notion-feature-panel {
+    padding: 32px;
+    border-radius: 10px;
+  }
+
+  .notion-feature-panel h3 {
+    margin-block: 18px 10px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+  }
+
+  @media (max-width: 767px) {
+    .notion-hero {
+      padding: 112px 20px 0;
+    }
+
+    .notion-hero-description {
+      font-size: 16px;
+    }
+
+    .notion-hero-actions {
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+
+    .notion-workspace-body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .notion-workspace-sidebar {
+      display: none;
+    }
+
+    .notion-workspace-content {
+      padding: 22px 16px 12px;
+    }
+
+    .notion-workspace-content h2 {
+      font-size: 25px;
+    }
+
+    .notion-provider-strip > div {
+      gap: 18px 28px;
+      font-size: 18px;
+    }
+  }
+}

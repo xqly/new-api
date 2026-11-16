@@ -1,0 +1,23 @@
+# New API
+
+<!-- impeccable:product-schema 1 -->
+
+## Platform
+
+Web. React 19 and TypeScript, Base UI, Tailwind CSS 4 and TanStack Router; Go API backend.
+
+## Product and users
+
+New API is a self-hosted gateway for developers and teams connecting AI providers through compatible API protocols. Operators configure channels, access, model routing and pricing; users manage API keys, inspect usage and work with models.
+
+## Durable constraints
+
+- The user requested the visual language of https://www.notion.com across all frontend surfaces.
+- Keep existing API contracts, routing, permissions, authentication, data handling and translations.
+- Keep New API / QuantumNous branding, license notices and upstream attribution.
+- Public marketing pages, authenticated tools, authentication forms and supporting pages share one visual foundation. Existing theme preferences and dark mode remain supported.
+- Administrative custom homepage content and external iframe content retain their configured behavior.
+
+## Evidence
+
+The product capabilities above are established by the repository and existing interface. Homepage workspace examples are labeled Preview and do not represent live account activity.
